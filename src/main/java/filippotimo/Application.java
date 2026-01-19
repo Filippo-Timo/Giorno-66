@@ -38,6 +38,29 @@ public class Application {
          * SELECT numero_fattura,importo,iva,data_fattura,denominazione FROM fatture
          * JOIN fornitori USING (numero_fornitore)
          *
+         *
+         *  Esercizio 7)
+         *
+         * SELECT
+         * EXTRACT(YEAR FROM data_fattura) AS anno,
+         * COUNT (*) AS numero_fatture
+         * FROM fatture
+         * WHERE iva=20
+         * GROUP BY EXTRACT(YEAR FROM data_fattura)
+         * ORDER BY anno;
+         *
+         *
+         * Esercizio 8)
+         *
+         * SELECT
+         * EXTRACT(YEAR FROM data_fattura) AS anno,
+         * COUNT (*) AS numero_fatture,
+         * SUM(importo) AS somma_totale
+         * FROM fatture
+         * GROUP BY EXTRACT(YEAR FROM data_fattura)
+         * ORDER BY anno;
+         *
+         *
          *  */
 
     }
